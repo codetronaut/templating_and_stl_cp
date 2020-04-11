@@ -1,1 +1,1 @@
-Resolved Complications of Standard Templating Library
+STL Algorithms Library
