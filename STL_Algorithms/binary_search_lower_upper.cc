@@ -31,7 +31,7 @@ int main(void){
      auto lb = lower_bound(arr, arr+n, 40);//here 40 is the intentional value
      std::cout<<std::endl<<"Lower Bound of 40 is at Position: "<< (lb-arr);
      auto ub = upper_bound(arr, arr+n, 40); //taking both intentional values as equal bcoz, it will give deeper insight of the working of lb and ub
-     std::cout<<std::endl<<"Upper Bound of 40 is at Position: "<< (lb-lb);
+     std::cout<<std::endl<<"Upper Bound of 40 is at Position: "<< (lb-ub);
      
      //lb-arr --> it will give the position at which lower bound of intentioanl value present and same for the lb-ub(it will give upper bound).
      
