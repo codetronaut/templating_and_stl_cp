@@ -5,10 +5,12 @@
 using std::vector;
 using std::rotate;
 using std::next_permutation;
+#define fast_code std::ios_base::sync_with_stdio(false); std::cin.tie(NULL);
 
 //Implementation of next permutations.
 void permutation_next()
 {
+    fast_code
     vector<int> v{1,2,3}; int it=0; int n;
     
     while(it < v.size())
@@ -26,12 +28,9 @@ void permutation_next()
     
     for(auto& x : v)
     {
-    
         std::cout<<x<<" ";
-    }
-    
+    }    
 }
-
 
 //Implementation of rotate
 
@@ -48,7 +47,6 @@ void Rotate_me()
     while(it < n)
     {
         std::cout<<arr[it]<<" ";
-        
         it++;
     }
     
@@ -65,10 +63,9 @@ void Rotate_me()
     
 }
 
-
 int main(void){
+    fast_code
+    Rotate_me();
+    permutation_next();
     
- Rotate_me();
- permutation_next();
- 
 }

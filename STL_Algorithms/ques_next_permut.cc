@@ -40,6 +40,7 @@ For the second testcase , {3,2,1} is the last configuration so we print the firs
 #include <iostream>
 #include<algorithm>
 #include<vector>
+#define fast_code std::ios_base::sync_with_stdio(false); std::cin.tie(NULL);
 using namespace std;
 
 int main(void){

@@ -1,6 +1,8 @@
 //By Anmol
 #include<iostream>
 #include<algorithm>
+#define fast_code std::ios_base::sync_with_stdio(false); std::cin.tie(NULL);
+
 
 int compare(int a, int b){ //comparator fn
     return a<=b;
@@ -9,6 +11,7 @@ int compare(int a, int b){ //comparator fn
 //A function for find() Implementation or search in container
 void find_stl()
 {
+    fast_code
     int arr[] = {1, 10, 11, 9, 100};
     int n = sizeof(arr) / sizeof(int);
     
@@ -27,6 +30,8 @@ void find_stl()
 
 
 int main(void){
+    
+    fast_code
     int arr[] = {20, 30, 40, 40, 40, 50, 100, 1100};
     int n = sizeof(arr) / sizeof(int); //size of static array
     
