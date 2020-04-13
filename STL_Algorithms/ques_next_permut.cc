@@ -41,12 +41,11 @@ For the second testcase , {3,2,1} is the last configuration so we print the firs
 #define fast_code std::ios_base::sync_with_stdio(false); std::cin.tie(NULL);
 
 
-void next_permutation_w_STL()
-{
-    
-}
+#include<iostream>
+#include<algorithm>
+using namespace std;
 
-void next_permutation_wout_STL(int *arr, int length)
+void next_permutation(vector<int>&arr, int length)
 {
     /*Mera intuition kya hai?
     e.g {0,1,2,5,3,3,0} iska just next wala nikalna hai 
@@ -60,6 +59,12 @@ void next_permutation_wout_STL(int *arr, int length)
     int i = length - 1;
     while(i > 0 && arr[i-1] >= arr[i])
         --i;
+
+    if(i==0)
+    {
+        sort(arr.begin(),arr.end());
+        return;
+    }
 
     //fimding pivot
 
@@ -96,17 +101,27 @@ void next_permutation_wout_STL(int *arr, int length)
 
 }
 
-int main(void)
-{
-    fast_code
-    int arr[] = {0,1,2,5,3,3,0};
-    int n = sizeof(arr)/sizeof(int);
-    next_permutation_wout_STL(arr, n);
-
-    for(int i=0;i<n; i++)
+int main(void) {
+    int choice, n;
+    cin>>choice;
+    
+    while(choice--)
     {
-        std::cout<<arr[i]<<" ";
+        cin>>n;
+        vector<int>arr(n);
+        for(int i=0; i<n; ++i)
+        {
+            cin>>arr[i];
+        }
+        next_permutation(arr,n);
+        for(int i:arr)
+        {
+            cout<<i<<" ";
+        }
+        cout<<endl;
     }
-    std::cout<<std::endl;
 }
+
+
+
 
