@@ -37,15 +37,76 @@ For the second testcase , {3,2,1} is the last configuration so we print the firs
 
 //Solution:
 
-#include <iostream>
-#include<algorithm>
-#include<vector>
+#include<iostream>
 #define fast_code std::ios_base::sync_with_stdio(false); std::cin.tie(NULL);
-using namespace std;
 
-int main(void){
-    
 
+void next_permutation_w_STL()
+{
     
+}
+
+void next_permutation_wout_STL(int *arr, int length)
+{
+    /*Mera intuition kya hai?
+    e.g {0,1,2,5,3,3,0} iska just next wala nikalna hai 
+    1) pehle increasing suffix sequence find karo then jha par break ho i.e chota value dikhe use pivot le lo --->{0,1,2(pivot), 5, 3, 3,0}
+    2) pivot ka jsut greater find karo and logic will be: (i-1) ko compare karo (length-1) se jah bhide kar dalo swap.---->{0,1,3,5,3,2,0}
+    yha arr[i-1] = 2 rhega and arr[i]=5.
+    3) then ab jo sequence bacha h use reverse kar dalo---> {0,1,3,0,2,3,5}
+    */
+    
+    //finding increasing suffix
+    int i = length - 1;
+    while(i > 0 && arr[i-1] >= arr[i])
+        --i;
+
+    //fimding pivot
+
+    int j = length - 1;
+
+    while(arr[j] <= arr[i-1])
+    {
+        --j;
+    }        
+        
+// j++;
+    int temp = arr[i-1];
+    arr[i-1] = arr[j];
+    arr[j] = temp;
+
+    // cout<<i-1<<" "<<j<<endl;
+
+// for(int i=0; i<length; i++)
+// {
+//     cout<<arr[i]<<" ";
+// }
+// cout<<endl;
+    //done with pivoting
+    j = length -1; //again initializing "j" as lenght - 1 to update it's value
+    while(i<j)
+    {
+        int temp1 = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp1;
+
+        ++i;
+        --j;
+    }       
+
+}
+
+int main(void)
+{
+    fast_code
+    int arr[] = {0,1,2,5,3,3,0};
+    int n = sizeof(arr)/sizeof(int);
+    next_permutation_wout_STL(arr, n);
+
+    for(int i=0;i<n; i++)
+    {
+        std::cout<<arr[i]<<" ";
+    }
+    std::cout<<std::endl;
 }
 
