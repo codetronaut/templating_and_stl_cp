@@ -5,7 +5,7 @@
 using std::vector;
 using std::rotate;
 using std::next_permutation;
-#define fast_code std::ios_base::sync_with_stdio(false); std::cin.tie(NULL);
+#define f_boot std::ios_base::sync_with_stdio(false); std::cin.tie(NULL);
 
 //Implementation of next permutations.
 void permutation_next()
@@ -64,7 +64,7 @@ void Rotate_me()
 }
 
 int main(void){
-    fast_code
+    f_boot
     Rotate_me();
     permutation_next();
     
