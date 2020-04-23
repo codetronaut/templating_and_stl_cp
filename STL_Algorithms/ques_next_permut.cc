@@ -82,11 +82,6 @@ void next_permutation(vector<int>&arr, int length)
 
     // cout<<i-1<<" "<<j<<endl;
 
-// for(int i=0; i<length; i++)
-// {
-//     cout<<arr[i]<<" ";
-// }
-// cout<<endl;
     //done with pivoting
     j = length -1; //again initializing "j" as lenght - 1 to update it's value
     while(i<j)
