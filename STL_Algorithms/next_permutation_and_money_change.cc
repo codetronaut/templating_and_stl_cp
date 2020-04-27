@@ -1,16 +1,18 @@
-//By Anmol
+/*
+    Author: Anmol
+*/
 #include <iostream>
 #include<algorithm>
 #include<vector>
 using std::vector;
 using std::rotate;
 using std::next_permutation;
-#define fast_code std::ios_base::sync_with_stdio(false); std::cin.tie(NULL);
+#define f_boot std::ios_base::sync_with_stdio(false); std::cin.tie(NULL);
 
 //Implementation of next permutations.
 void permutation_next()
 {
-    fast_code
+    f_boot
     vector<int> v{1,2,3}; int it=0; int n;
     
     while(it < v.size())
@@ -64,7 +66,7 @@ void Rotate_me()
 }
 
 int main(void){
-    fast_code
+    f_boot
     Rotate_me();
     permutation_next();
     

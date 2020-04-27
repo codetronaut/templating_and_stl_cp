@@ -1,4 +1,6 @@
-//By Anmol
+/*
+    Author: Anmol
+*/
 #include<iostream>
 #include<algorithm>
 #define fast_code std::ios_base::sync_with_stdio(false); std::cin.tie(NULL);
