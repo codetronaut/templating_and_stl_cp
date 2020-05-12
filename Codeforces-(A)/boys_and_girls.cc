@@ -22,12 +22,12 @@ int main(void)
     
     for(ll i:arr)
     {
-        if(i!=0)
+        if(i >= 2)
         {
             count++;
         }
     }
-
+    cout<<count<<" ";
     if((count & 1) == 0) cout<<"CHAT WITH HER!"<<endl;
     else cout<<"IGNORE HIM!";
 } 

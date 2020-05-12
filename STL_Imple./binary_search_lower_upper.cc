@@ -28,7 +28,45 @@ void find_stl()
 
     
 }
+/*
 
+struct interval{
+	ll start_t;
+	ll end_t;
+};
+
+bool compare(interval i1, interval i2){
+	return i1.start_t > i2.end_t;
+}
+
+int main(void) 
+{ 
+    f_boot
+    interval arr[] = {{6,4},{3,4},{4,6},{8,13}};
+	
+    //Map
+    // char arr[] = {'a','b','c','d','a'};
+	// map<char,ll> m; //form through bst
+	
+	// for(int i =0; i< 5; ++i){
+	// 	++m[arr[i]]; 
+	// }
+	// 	map<char,ll>::iterator it;
+		
+	// 	for(it = m.begin(); it != m.end(); ++it){
+	// 		
+	// 	cout<<it->first<<" :"<<it->second<<endl;
+	// }
+	
+	sort(arr,arr+4,compare); 
+	
+	for(int i=0; i<4; ++i){
+		cout<<arr[i].start_t<<" : "<<arr[i].end_t<<endl;
+	}
+    
+}
+
+*/
 
 
 int main(void){

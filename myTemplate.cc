@@ -19,7 +19,7 @@
 #define INF numeric_limits<int>::max()
 #define INFLL numeric_limits<long long int>::max()
  
-typedef long long int lli;
+typedef long long int ll;
 typedef long double ld;
 #define f_boot ios_base::sync_with_stdio(false); cin.tie(NULL);
     
@@ -32,6 +32,15 @@ int main(void)
     f_boot
  
    //yha likh bakwass code
+   
+   	ll n =7;
+	
+	//cin>>n;
+	
+	while(n--){
+	
+       cout<<"code"<<" ";
+	}
     
 
 	return 0; 
