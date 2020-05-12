@@ -1,0 +1,100 @@
+1) Easy:
+
+Divide x by 2 ^ i.
+x = x >> i
+Example: 
+=> 48 >> 3 
+=  6
+2. Multiply x by 2 ^ i:
+
+x = x << i
+Example: 
+=> 6 << 3 
+=  48
+3. Set the i’th bit in x:
+
+x = x | (1 << i)
+Example: 
+=> 9 | (1 << 2) 
+=  9 | 4 
+=  13
+4. Check if the ith bit is set:
+
+x & (1 << i) == 0
+Example:
+=> 12 & (1 << 3) == 0
+=  12 & 8 == 0
+=  FALSE
+5. Flip the i’th bit:
+
+x = x ^ (1 << i) == 0
+Example:
+=> 7 ^ (1 << 2) 
+=  7 ^ 4 
+=  3
+
+
+2) Intermediate:
+
+Check if a number is divisible by 2 ^ i:
+x & ((1 << (i + 1) ) - 1 ) == 0
+Example:
+=> 28 & ((1 << (1 + 1) ) - 1) == 0
+=  28 & ((1 << 2) ) - 1) == 0
+=  28 & (4 - 1) == 0
+=  28 & 3 == 0
+= TRUE
+
+2. Find remainder of x with 2 ^ i:
+
+ x = x & ((1 << i) - 1)
+Example: 
+=> 27 & ((1 << 3) - 1) 
+=  27 & (8 - 1) 
+=  27 & 7
+=  3
+3. Unset the i’th bit in x:
+
+x & ( ( ~0 ) ^ ( 1 << i ) )
+Example: 
+=> 27 & ( ( ~0 ) ^ ( 1 << 0 ) ) 
+=  27 & ( ( -1 ) ^ ( 1 ) ) 
+=  27 & ( - 2 ) 
+=  26
+
+
+
+3) Hard:
+
+Convert a boolean matrix to a 64-bit array:
+long bits[] = new long[(rowLength * colLength) >> (1 << 6)]
+for(int i = 0; i < rowLength; i++) {
+  for(int j = 0; j < colLength; j++) {
+    int index = i * colLength + j;
+    bits[index >> 6] |= boolArray[i][j] 
+                              << (1 << (index & ((1 << 6) - 1)));
+  }
+}
+return bits;
+Which means….complicated. Figuring out what’s happening is a challenge! Try to use the easy and medium concepts here.
+
+
+
+
+2. Find boolean value of i’th row and j’th column in the resultant bit array. Requires very similar logic as shown above:
+
+int index = (i * colLength + j)
+bits[index >> 6] & (1 << (index & ((1 << 6) - 1))) == 0 
+
+
+
+3. Total number of bits which are set in
+n = __builtin_popcount(n)
+
+4.Maximum x that is power of 2 and divides n:
+set x = (n & -n)
+e.g. n = 20 (10100)
+(10100&01100) = 00100 = 4
+thus 4 maximum power of 2 that divides n
+
+
