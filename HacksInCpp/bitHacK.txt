@@ -98,3 +98,24 @@ e.g. n = 20 (10100)
 thus 4 maximum power of 2 that divides n
 
 
+
+
+Note:
+
+XOR equilvalent 
+
+in terms of and(&) and not(~)
+
+A ^ B == ((~(A & B)) & (~(~A & ~B)))
+
+e.g 4 ^ 5 == 1  and ~(4 & 5) & ~(~4 & ~5) == 1 
+
+
+
+-> Check if a number is a power of 2:
+
+if(!(n & (n-1)) && (n != 0))
+	cout << "n is a power of 2\n";
+
+
+
