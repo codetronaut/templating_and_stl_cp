@@ -28,7 +28,7 @@ ll countBitFast(ll n){
 	ll count = 0;
 	
 	while(n>0){
-		n = n & (n-1);
+		n = n & (n-0x0001);
 		++count;
 	}
 	
@@ -78,7 +78,7 @@ void generateSubsets(char *a){
     
     ll length = strlen(a);
     
-    ll range = (1<<length) -1; // (2^n - 1)
+    ll range = (0x0001 << length) - 0x0001; // (2^n - 1)
     
     for(ll i=0; i<=range; ++i)
     {

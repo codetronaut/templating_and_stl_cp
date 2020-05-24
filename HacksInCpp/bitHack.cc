@@ -33,8 +33,7 @@ void negativeORnot()
 		cout << x << " and " << y << " have opposite signs";
 	else
 		cout << x << " and " << y << " don't have opposite signs";	
-	
-	
+    
 }
 
 //checking the position of rightmost setbit
@@ -111,4 +110,5 @@ int main()
 
     cout<<positionRightmostAltr(4);
     return 0; 
+    
 } 
