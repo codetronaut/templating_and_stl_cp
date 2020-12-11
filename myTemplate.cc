@@ -12,13 +12,15 @@
 // #define watchLoop(v) for(int i = 0; i < v.size(); i++) cout << v[i] << " \n"[i == v.size()-1];
 // #define all(v) (v).begin(), (v).end()
 //  
+// #define INF numeric_limits<int>::max()
+// #define INFLL numeric_limits<long long int>::max()
+//
 #define pb push_back 
 #define endl '\n'
 #define MAX 100000
 #define MOD 100000007
-// #define INF numeric_limits<int>::max()
-// #define INFLL numeric_limits<long long int>::max()
- 
+# define my_sizeof(type) ((char *)(&type+1)-(char*)(&type)) 
+
 typedef long long int ll;
 typedef long double ld;
 #define f_boot ios_base::sync_with_stdio(false); cin.tie(NULL);

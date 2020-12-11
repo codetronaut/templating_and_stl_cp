@@ -1,0 +1,58 @@
+https://www.quora.com/What-are-some-cool-C++-tricks-to-use-in-a-programming-contest
+
+
+I’ve being practicing for ACM ICPC for about one year and I already gathered some C/C++ tricks that I use in almost every problem:
+
+Loop in C-string:
+char s[100]; 
+for (int i = 0; s[i]; ++i) { ... } 
+This is extremely useful (also avoids the strlen usage, that you could forget is O(n) and put on for condition).
+
+Testing if not negative 1:
+if (~x) { ... } 
+In competitive programming we tend to write as little as possible, só a simple x ! = -1 can be shortened to 2 characters.
+
+This works because negative numbers use two’s complement, so -1 is represented as all ones in binary. The tilde (~) operation inverts all bits of the variable, so the -1 turns into a zero, and any other number turns into something not zero. The if condition is valid if it’s not zero, so ~x is valid for any value different than zero.
+
+Least significant 1 bit
+int lsb = x&-x; 
+This is a very useful operation than returns the LSB (EDIT: the least significant bit with value 1) of a number. If you’re used to Fenwick Tree (aka Binary Indexed Tree, or just BIT) then you know how useful it is.
+
+This also works because of two’s complement. If you AND any number and it’s negative you obtain the LSB. Very simple and fast.
+
+More than one operation per line
+if (dist[v] > dist[u] + w) 
+	dist[v] = dist[u] + w, q.push(v); 
+Many people don’t know this, but you can have statements split by commas. This I tend to use in every problem I solve, it reduces the code and avoids the use of semicolons.
+
+The only down side is that you can’t use with break, continue or return (not statements :/). So when I have to use any of these I have to add braces and semicolons.
+
+Scanf on array
+int a[100]; 
+for (int i = 0; i < n; ++i) scanf("%d", a+i); 
+This I don’t like very much because it doesn’t work for arrays with higher dimensions, but since most problems have at most 1D input it’s quite useful too (although I tend to use the &a[i], but my teammates use this trick).
+
+Order array without losing original order
+int a[100], p[100]; 
+// receive input 
+for (int i = 0; i < n; ++i) scanf("%d", &a[i]), p[i] = i; 
+ 
+sort(p, p+n, [=](int i, int j) { return a[i] < a[j]; }); 
+This is extremely useful!
+
+First you don’t lose the original order (for offline algorithms this can be necessary).
+
+Second you can do the same for how many dimensions you have (for 2D points: x[] and y[]; or 3D: x[], y[] and z[]; or any number of arrays..) and you don’t have to create structures (lot’s of lines saved) or use tuple or pairs (these are annoying in competitive programming. Using pair of pair you have something like: x.first.second + x.second.second and you line goes extra large and hard to read).
+
+Infinite
+const int INF = 0x3f3f3f3f; 
+This infinite constant is very useful too. I used to do something like x = 2e9; but I had to take care about not adding infinites (because of integer overflow) and stuff like this. This constant can be doubled without overflowing and also can be set very easily this way:
+
+int dist[1000]; 
+memset(dist, 63, sizeof(dist)); // 0x3f == 63 
+For shortest path algorithms I always use this (I used to tend -1 version, but I had to do additional checks to verify if dist == -1 and if not..) and in CP BFS and SSSP are very common problems.
+
+I think that’s all for now. If I remember any other trick I’ll edit this answer, but that’s all I can remember for now!
+
+66.9K viewsView UpvotersView Sharers
+
