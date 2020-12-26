@@ -7,13 +7,16 @@ int maxo(int a, int b) {
 }
 
 int main() {
-	int a[] = {-2,-3,4,-1,-2,1,5,-1};
+	int a[] = {4, -8, 9, -4, 1, -8, -1, 6}; 
 	int size = sizeof(a)/sizeof(a[0]);
 	int res = a[0]; int maxHere = a[0];
 	
 	for (int i =0; i<size; ++i) {
 		maxHere = maxo(maxHere+a[i], a[i]);
+		//cout<<"i= "<<i;
+		//cout<<"\nmaxHere: "<<maxHere;
 		res = maxo(res, maxHere);
+		//cout<<"\nres: "<<res<<"\n";
 	}
-	cout<<res;
+	cout<<res<<"\n";
 }

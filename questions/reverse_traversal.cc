@@ -26,7 +26,7 @@ int main() {
     while (i>=0 && i < n) {
         if (a[i]%2 == 0) {
             a[n--] = a[i];
-            a[n--] = a[i];
+	    a[n--] = a[i];
         }
         else {
             a[n] = a[i];

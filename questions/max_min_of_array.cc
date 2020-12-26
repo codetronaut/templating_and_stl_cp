@@ -21,7 +21,7 @@ int main() {
         if (v[i+1] && (v[i+1] > max))
             max = v[i+1];
         if (v[i+1] && (v[i+1] < min))
-            min = v[i+1]; 
+            min = v[i+1];
     }
     cout<<" min: "<<min<<" max: "<<max<<endl;
 

@@ -1,7 +1,3 @@
-/*
-   Author: Anmol
-*/
-
 #include<bits/stdc++.h>
 #define pb push_back 
 #define endl '\n'
